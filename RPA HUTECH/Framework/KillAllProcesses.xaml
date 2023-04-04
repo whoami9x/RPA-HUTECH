@@ -78,7 +78,7 @@
         <OutArgument x:TypeArguments="s:String[]">[listProcess]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="s:String[]">[{"explorer.exe","conhost.exe","chrome.exe"}]</InArgument>
+        <InArgument x:TypeArguments="s:String[]">[{"conhost.exe","chrome.exe"}]</InArgument>
       </Assign.Value>
     </Assign>
     <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="484.8,372" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[listProcess]">
