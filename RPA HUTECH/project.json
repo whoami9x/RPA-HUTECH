@@ -3,10 +3,13 @@
   "description": "Robotic Enterprise Framework",
   "main": "Main.xaml",
   "dependencies": {
+    "UiPath.Database.Activities": "[1.7.1]",
     "UiPath.Excel.Activities": "[2.20.0-preview]",
+    "UiPath.Mail.Activities": "[1.18.2]",
     "UiPath.System.Activities": "[23.4.1-preview]",
     "UiPath.Testing.Activities": "[23.4.0-preview]",
-    "UiPath.UIAutomation.Activities": "[23.4.1-preview]"
+    "UiPath.UIAutomation.Activities": "[23.4.1-preview]",
+    "UiPathTeam.Gmail.Activities": "[1.0.6822.33137]"
   },
   "webServices": [],
   "entitiesStores": [],
