@@ -245,9 +245,7 @@
                       <av:PointCollection x:Key="ConnectorLocation">419.6,513.6 419.6,543.6 420,543.6 420,620</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Transition.Condition>
-                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="SystemException is Nothing" />
-                  </Transition.Condition>
+                  <Transition.Condition>[SystemException is Nothing]</Transition.Condition>
                   <Transition.To>
                     <State x:Name="__ReferenceID1" DisplayName="STEP1: Checking email inbox" sap:VirtualizedContainerService.HintSize="244.8,120" sap2010:WorkflowViewState.IdRef="State_2">
                       <State.Entry>
@@ -283,7 +281,14 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.To>
-                            <State x:Name="__ReferenceID2" DisplayName="STEP2: Process job sent by Email" sap:VirtualizedContainerService.HintSize="244,111.2" sap2010:WorkflowViewState.IdRef="State_3">
+                            <State x:Name="__ReferenceID2" DisplayName="STEP2: Process job sent by Email" sap:VirtualizedContainerService.HintSize="378.4,475.2" sap2010:WorkflowViewState.IdRef="State_3">
+                              <State.Entry>
+                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Handles\Process job sent by user.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Handles\Process job sent by user.xaml">
+                                  <ui:InvokeWorkflowFile.Arguments>
+                                    <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                  </ui:InvokeWorkflowFile.Arguments>
+                                </ui:InvokeWorkflowFile>
+                              </State.Entry>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <av:Point x:Key="ShapeLocation">298,844.4</av:Point>
