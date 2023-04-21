@@ -61,7 +61,6 @@
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <StateMachine InitialState="{x:Reference __ReferenceID0}" DisplayName="Metabot" sap:VirtualizedContainerService.HintSize="1424.8,1109.6" sap2010:WorkflowViewState.IdRef="StateMachine_1">
@@ -74,9 +73,9 @@
         <av:PointCollection x:Key="ConnectorLocation">269,85.2 269,115.2 272.68,115.2 272.68,157.2</av:PointCollection>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="253.6,105.6" sap2010:WorkflowViewState.IdRef="State_1">
+    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="577.6,1273.6" sap2010:WorkflowViewState.IdRef="State_1">
       <State.Entry>
-        <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="532.8,700" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+        <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="532.8,853.6" sap2010:WorkflowViewState.IdRef="TryCatch_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -84,7 +83,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <TryCatch.Try>
-            <Sequence DisplayName="Load configurations and open applications" sap:VirtualizedContainerService.HintSize="496,468.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence DisplayName="Load configurations and open applications" sap:VirtualizedContainerService.HintSize="496,622.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -110,6 +109,11 @@
               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke InitiAllApplications workflow" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Framework\InitAllApplications.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Framework\CloseAllApplications.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Framework\CloseAllApplications.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <scg:Dictionary x:TypeArguments="x:String, Argument" />
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
             </Sequence>
@@ -478,9 +482,7 @@
                                               <x:Int32 x:Key="DestConnectionPointIndex">39</x:Int32>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <Transition.Condition>
-                                            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="SystemException is Nothing" />
-                                          </Transition.Condition>
+                                          <Transition.Condition>[SystemException is Nothing]</Transition.Condition>
                                           <Transition.To>
                                             <State x:Name="__ReferenceID1" DisplayName="Check maintenance" sap:VirtualizedContainerService.HintSize="275.2,89.6" sap2010:WorkflowViewState.IdRef="State_5">
                                               <State.Entry>
@@ -659,9 +661,7 @@
                                           <Transition.To>
                                             <x:Reference>__ReferenceID2</x:Reference>
                                           </Transition.To>
-                                          <Transition.Condition>
-                                            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="SystemException isnot Nothing" />
-                                          </Transition.Condition>
+                                          <Transition.Condition>[SystemException isnot Nothing]</Transition.Condition>
                                         </Transition>
                                       </State.Transitions>
                                     </State>
