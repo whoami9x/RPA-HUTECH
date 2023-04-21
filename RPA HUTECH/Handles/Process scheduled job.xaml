@@ -305,7 +305,7 @@
                           <Flowchart.StartNode>
                             <x:Reference>__ReferenceID8</x:Reference>
                           </Flowchart.StartNode>
-                          <FlowDecision x:Name="__ReferenceID8" sap2010:Annotation.AnnotationText="Check maintenance status is empty" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.4,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                          <FlowDecision x:Name="__ReferenceID8" sap2010:Annotation.AnnotationText="Check maintenance status is empty" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
                             <FlowDecision.Condition>
                               <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="maintenance_status = &quot;&quot;" />
                             </FlowDecision.Condition>
@@ -313,7 +313,7 @@
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <av:Point x:Key="ShapeLocation">260.641666666667,146.5</av:Point>
-                                <av:Size x:Key="ShapeSize">78.4,87.2</av:Size>
+                                <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
                                 <av:PointCollection x:Key="TrueConnector">260.641666666667,190.1 150,190.1 150,278.54</av:PointCollection>
                                 <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
                                 <av:PointCollection x:Key="FalseConnector">339.041666666667,190.1 470,190.1 470,297.5</av:PointCollection>
@@ -400,12 +400,12 @@
                                   </Switch>
                                 </Sequence>
                                 <FlowStep.Next>
-                                  <FlowDecision x:Name="__ReferenceID4" Condition="[isRun]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.4,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
+                                  <FlowDecision x:Name="__ReferenceID4" Condition="[isRun]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         <av:Point x:Key="ShapeLocation">280.641666666667,386.5</av:Point>
-                                        <av:Size x:Key="ShapeSize">78.4,87.2</av:Size>
+                                        <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
                                         <av:PointCollection x:Key="TrueConnector">280.641666666667,430.1 150,430.1 150,478.54</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
@@ -418,20 +418,42 @@
                                             <av:PointCollection x:Key="ConnectorLocation">150,561.74 150,660.14 220,660.14</av:PointCollection>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Sequence DisplayName="Call bot" sap:VirtualizedContainerService.HintSize="200,83.2" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                        <Sequence DisplayName="Call bot" sap:VirtualizedContainerService.HintSize="1197.6,1472.8" sap2010:WorkflowViewState.IdRef="Sequence_11">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1135.2,850.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                                          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1135.2,1360.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                                             <TryCatch.Try>
-                                              <Sequence sap:VirtualizedContainerService.HintSize="1098.4,619.2" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                              <Sequence sap:VirtualizedContainerService.HintSize="1098.4,1129.6" sap2010:WorkflowViewState.IdRef="Sequence_17">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
+                                                <Sequence DisplayName="Update running_task " sap:VirtualizedContainerService.HintSize="1036,83.2" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_18">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[strQuery]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String" xml:space="preserve">["UPDATE dbo.Server Set running_task = '"+robotName+"'  Where machine_name = '"+strMachineName+"'"]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Handles\Update data from DB.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Handles\Update data from DB.xaml">
+                                                    <ui:InvokeWorkflowFile.Arguments>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="in_sqlQuery">[strQuery]</InArgument>
+                                                      <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtResult" />
+                                                    </ui:InvokeWorkflowFile.Arguments>
+                                                  </ui:InvokeWorkflowFile>
+                                                </Sequence>
                                                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Calling bot" sap:VirtualizedContainerService.HintSize="1036,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="[robotName]">
                                                   <ui:InvokeWorkflowFile.Arguments>
                                                     <InArgument x:TypeArguments="x:String" x:Key="in_orderNumber">
@@ -439,6 +461,28 @@
                                                     </InArgument>
                                                   </ui:InvokeWorkflowFile.Arguments>
                                                 </ui:InvokeWorkflowFile>
+                                                <Sequence DisplayName="Update running_task " sap:VirtualizedContainerService.HintSize="1036,347.2" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_19">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[strQuery]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String" xml:space="preserve">["UPDATE dbo.Server Set running_task = ''  Where machine_name = '"+strMachineName+"'"]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Handles\Update data from DB.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Handles\Update data from DB.xaml">
+                                                    <ui:InvokeWorkflowFile.Arguments>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="in_sqlQuery">[strQuery]</InArgument>
+                                                      <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtResult" />
+                                                    </ui:InvokeWorkflowFile.Arguments>
+                                                  </ui:InvokeWorkflowFile>
+                                                </Sequence>
                                                 <If Condition="[systemException &lt;&gt; &quot;&quot;]" sap:VirtualizedContainerService.HintSize="1036,353.6" sap2010:WorkflowViewState.IdRef="If_2">
                                                   <If.Then>
                                                     <Sequence sap:VirtualizedContainerService.HintSize="496,193.6" sap2010:WorkflowViewState.IdRef="Sequence_15">
@@ -571,7 +615,7 @@
                                               </ui:InvokeWorkflowFile>
                                             </Sequence>
                                             <FlowStep.Next>
-                                              <FlowDecision x:Name="__ReferenceID5" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.4,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
+                                              <FlowDecision x:Name="__ReferenceID5" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
                                                 <FlowDecision.Condition>
                                                   <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="systemException &lt;&gt; &quot;&quot;" />
                                                 </FlowDecision.Condition>
@@ -579,7 +623,7 @@
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                     <av:Point x:Key="ShapeLocation">280.8,766.4</av:Point>
-                                                    <av:Size x:Key="ShapeSize">78.4,87.2</av:Size>
+                                                    <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
                                                     <av:PointCollection x:Key="TrueConnector">280.8,810 150,810 150,888.54</av:PointCollection>
                                                     <av:PointCollection x:Key="FalseConnector">359.2,810 480,810 480,888.4</av:PointCollection>
                                                   </scg:Dictionary>
@@ -645,7 +689,7 @@
                                                         <av:Size x:Key="ShapeSize">200,83.2</av:Size>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <Sequence DisplayName="Send email error" sap:VirtualizedContainerService.HintSize="496,470.4" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                                    <Sequence DisplayName="Send email error" sap:VirtualizedContainerService.HintSize="200,83.2" sap2010:WorkflowViewState.IdRef="Sequence_13">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
