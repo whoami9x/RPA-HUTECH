@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Read_email_from_Gmail" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1206,1940" sap2010:WorkflowViewState.IdRef="Read_email_from_Gmail_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:um="clr-namespace:UiPath.Mail;assembly=UiPath.Mail.Activities" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Read_email_from_Gmail" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1040,3360" sap2010:WorkflowViewState.IdRef="Read_email_from_Gmail_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:um="clr-namespace:UiPath.Mail;assembly=UiPath.Mail.Activities" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -91,7 +91,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Checking email from Gmail" sap:VirtualizedContainerService.HintSize="765,1875" sap2010:WorkflowViewState.IdRef="Sequence_26">
+  <Sequence DisplayName="Checking email from Gmail" sap:VirtualizedContainerService.HintSize="1050.4,3295.2" sap2010:WorkflowViewState.IdRef="Sequence_26">
     <Sequence.Variables>
       <Variable x:TypeArguments="str:MatchCollection" Name="lstSentFrom" />
       <Variable x:TypeArguments="x:String" Name="strSubject" />
@@ -112,7 +112,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="703,83" sap2010:WorkflowViewState.IdRef="Assign_22">
+    <Assign sap:VirtualizedContainerService.HintSize="988,81.6" sap2010:WorkflowViewState.IdRef="Assign_22">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strMachineName]</OutArgument>
       </Assign.To>
@@ -120,14 +120,14 @@
         <InArgument x:TypeArguments="x:String">[Environment.MachineName]</InArgument>
       </Assign.Value>
     </Assign>
-    <Sequence DisplayName="Update check mail as FALSE" sap:VirtualizedContainerService.HintSize="703,348" sap2010:WorkflowViewState.IdRef="Sequence_56">
+    <Sequence DisplayName="Update check mail as FALSE" sap:VirtualizedContainerService.HintSize="988,83.2" sap2010:WorkflowViewState.IdRef="Sequence_56">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_34">
+      <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_34">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[strQuery]</OutArgument>
         </Assign.To>
@@ -135,14 +135,14 @@
           <InArgument x:TypeArguments="x:String" xml:space="preserve">["UPDATE dbo.Server Set mail_checking = 'FALSE',running_task = ''  Where machine_name = '"+strMachineName+"'"]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Handles\Update data from DB.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Handles\Update data from DB.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Handles\Update data from DB.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Handles\Update data from DB.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="in_sqlQuery">[strQuery]</InArgument>
           <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtResult" />
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
-    <Sequence DisplayName="Select machines are checking email" sap:VirtualizedContainerService.HintSize="703,83" sap2010:WorkflowViewState.IdRef="Sequence_57">
+    <Sequence DisplayName="Select machines are checking email" sap:VirtualizedContainerService.HintSize="988,83.2" sap2010:WorkflowViewState.IdRef="Sequence_57">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -164,22 +164,22 @@
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
-    <If Condition="[dtResult.Rows.Count &gt; 0]" DisplayName="No server is checking email" sap:VirtualizedContainerService.HintSize="703,1130" sap2010:WorkflowViewState.IdRef="If_8">
+    <If Condition="[dtResult.Rows.Count &gt; 0]" DisplayName="No server is checking email" sap:VirtualizedContainerService.HintSize="988,2815.2" sap2010:WorkflowViewState.IdRef="If_8">
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="558,968" sap2010:WorkflowViewState.IdRef="Sequence_40">
+        <Sequence sap:VirtualizedContainerService.HintSize="844,2655.2" sap2010:WorkflowViewState.IdRef="Sequence_40">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Update mail_checking as TRUE" sap:VirtualizedContainerService.HintSize="496,348" sap2010:WorkflowViewState.IdRef="Sequence_44">
+          <Sequence DisplayName="Update mail_checking as TRUE" sap:VirtualizedContainerService.HintSize="781.6,347.2" sap2010:WorkflowViewState.IdRef="Sequence_44">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_28">
+            <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_28">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strQuery]</OutArgument>
               </Assign.To>
@@ -187,26 +187,26 @@
                 <InArgument x:TypeArguments="x:String" xml:space="preserve">["UPDATE dbo.Server Set mail_checking = 'TRUE', running_task = 'Checking email...'  Where machine_name = '"+strMachineName+"'"]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Handles\Update data from DB.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Handles\Update data from DB.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Handles\Update data from DB.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Handles\Update data from DB.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="x:String" x:Key="in_sqlQuery">[strQuery]</InArgument>
                 <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtResult" />
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
           </Sequence>
-          <umab:GmailApplicationCard ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Account="rpademo2023@gmail.com" DisplayName="Use Gmail" EmailAddress="rpademo2023@gmail.com" sap:VirtualizedContainerService.HintSize="496,81" sap2010:WorkflowViewState.IdRef="GmailApplicationCard_3" Timeout="90" UseConnectionService="False">
+          <umab:GmailApplicationCard ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Account="rpademo2023@gmail.com" DisplayName="Use Gmail" EmailAddress="rpademo2023@gmail.com" sap:VirtualizedContainerService.HintSize="781.6,1768.8" sap2010:WorkflowViewState.IdRef="GmailApplicationCard_3" Timeout="90" UseConnectionService="False">
             <umab:GmailApplicationCard.Body>
               <ActivityAction x:TypeArguments="um:IMailQuickHandle">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="um:IMailQuickHandle" Name="Gmail" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="748,1590" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="748,1587.2" sap2010:WorkflowViewState.IdRef="Sequence_25">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="686,83" sap2010:WorkflowViewState.IdRef="Assign_9">
+                  <Assign sap:VirtualizedContainerService.HintSize="685.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_9">
                     <Assign.To>
                       <OutArgument x:TypeArguments="scg:IEnumerable(snm:MailMessage)">[lstMailMessage]</OutArgument>
                     </Assign.To>
@@ -219,7 +219,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </Assign>
-                  <umab:ForEachEmailX MailFilter="{x:Null}" DisplayName="For Each Email" sap:VirtualizedContainerService.HintSize="686,1356" sap2010:WorkflowViewState.IdRef="ForEachEmailX_6" IncludeSubfolders="False" Mails="[lstMailMessage]" NumberOfEmailsLimit="100" UnreadOnly="True" WithAttachmentsOnly="False">
+                  <umab:ForEachEmailX MailFilter="{x:Null}" DisplayName="For Each Email" sap:VirtualizedContainerService.HintSize="685.6,1353.6" sap2010:WorkflowViewState.IdRef="ForEachEmailX_6" IncludeSubfolders="False" Mails="[lstMailMessage]" NumberOfEmailsLimit="100" UnreadOnly="True" WithAttachmentsOnly="False">
                     <umab:ForEachEmailX.Body>
                       <ActivityAction x:TypeArguments="snm:MailMessage, x:Int32">
                         <ActivityAction.Argument1>
@@ -228,15 +228,15 @@
                         <ActivityAction.Argument2>
                           <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                         </ActivityAction.Argument2>
-                        <Flowchart sap:VirtualizedContainerService.HintSize="652,1099" sap2010:WorkflowViewState.IdRef="Flowchart_5">
+                        <Flowchart sap:VirtualizedContainerService.HintSize="652,1098.4" sap2010:WorkflowViewState.IdRef="Flowchart_5">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
-                              <av:Size x:Key="ShapeSize">60,75</av:Size>
+                              <av:Size x:Key="ShapeSize">60,75.2</av:Size>
                               <av:PointCollection x:Key="ConnectorLocation">300,77.7 300,148.4</av:PointCollection>
-                              <x:Double x:Key="Height">1061.54</x:Double>
+                              <x:Double x:Key="Height">1061.74</x:Double>
                               <x:Double x:Key="Width">618.49861222639265</x:Double>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
@@ -247,11 +247,11 @@
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <av:Point x:Key="ShapeLocation">200,148.4</av:Point>
-                                <av:Size x:Key="ShapeSize">200,83</av:Size>
+                                <av:Size x:Key="ShapeSize">200,83.2</av:Size>
                                 <av:PointCollection x:Key="ConnectorLocation">300,231.4 300,261.4</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Sequence DisplayName="Init" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                            <Sequence DisplayName="Init" sap:VirtualizedContainerService.HintSize="200,83.2" sap2010:WorkflowViewState.IdRef="Sequence_20">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -289,25 +289,25 @@
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <av:Point x:Key="ShapeLocation">200,261.4</av:Point>
-                                    <av:Size x:Key="ShapeSize">200,83</av:Size>
+                                    <av:Size x:Key="ShapeSize">200,83.2</av:Size>
                                     <av:PointCollection x:Key="ConnectorLocation">300,344.4 300,368.54</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Sequence DisplayName="Check update github" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                                <Sequence DisplayName="Check update github" sap:VirtualizedContainerService.HintSize="200,83.2" sap2010:WorkflowViewState.IdRef="Sequence_52">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <If Condition="[strSubject.ToUpper.Contains(&quot;GITHUB&quot;)]" sap:VirtualizedContainerService.HintSize="594,994" sap2010:WorkflowViewState.IdRef="If_9">
+                                  <If Condition="[strSubject.ToUpper.Contains(&quot;GITHUB&quot;)]" sap:VirtualizedContainerService.HintSize="1052,990.4" sap2010:WorkflowViewState.IdRef="If_9">
                                     <If.Then>
-                                      <Sequence sap:VirtualizedContainerService.HintSize="558,802" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                                      <Sequence sap:VirtualizedContainerService.HintSize="558.4,800.8" sap2010:WorkflowViewState.IdRef="Sequence_53">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Assign sap:VirtualizedContainerService.HintSize="496,84" sap2010:WorkflowViewState.IdRef="Assign_32">
+                                        <Assign sap:VirtualizedContainerService.HintSize="496,83.2" sap2010:WorkflowViewState.IdRef="Assign_32">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:String">[strQuery]</OutArgument>
                                           </Assign.To>
@@ -316,20 +316,20 @@
 " SET github_update = 'TRUE'"]</InArgument>
                                           </Assign.Value>
                                         </Assign>
-                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Handles\Update data from DB.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="496,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Handles\Update data from DB.xaml">
+                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Handles\Update data from DB.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="496,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Handles\Update data from DB.xaml">
                                           <ui:InvokeWorkflowFile.Arguments>
                                             <InArgument x:TypeArguments="x:String" x:Key="in_sqlQuery">[strQuery]</InArgument>
                                             <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtResult" />
                                           </ui:InvokeWorkflowFile.Arguments>
                                         </ui:InvokeWorkflowFile>
-                                        <Sequence DisplayName="Update mail_checking as FALSE" sap:VirtualizedContainerService.HintSize="496,348" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                                        <Sequence DisplayName="Update mail_checking as FALSE" sap:VirtualizedContainerService.HintSize="496,347.2" sap2010:WorkflowViewState.IdRef="Sequence_55">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <Assign sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_33">
+                                          <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_33">
                                             <Assign.To>
                                               <OutArgument x:TypeArguments="x:String">[strQuery]</OutArgument>
                                             </Assign.To>
@@ -337,18 +337,18 @@
                                               <InArgument x:TypeArguments="x:String" xml:space="preserve">["UPDATE dbo.Server Set mail_checking = 'FALSE'  Where machine_name = '"+strMachineName+"'"]</InArgument>
                                             </Assign.Value>
                                           </Assign>
-                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Handles\Update data from DB.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Handles\Update data from DB.xaml">
+                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Handles\Update data from DB.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Handles\Update data from DB.xaml">
                                             <ui:InvokeWorkflowFile.Arguments>
                                               <InArgument x:TypeArguments="x:String" x:Key="in_sqlQuery">[strQuery]</InArgument>
                                               <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtResult" />
                                             </ui:InvokeWorkflowFile.Arguments>
                                           </ui:InvokeWorkflowFile>
                                         </Sequence>
-                                        <ui:Continue sap:VirtualizedContainerService.HintSize="496,25" sap2010:WorkflowViewState.IdRef="Continue_1" />
+                                        <ui:Continue sap:VirtualizedContainerService.HintSize="496,24.8" sap2010:WorkflowViewState.IdRef="Continue_1" />
                                       </Sequence>
                                     </If.Then>
                                     <If.Else>
-                                      <Sequence sap:VirtualizedContainerService.HintSize="450,104" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                                      <Sequence sap:VirtualizedContainerService.HintSize="449.6,104.8" sap2010:WorkflowViewState.IdRef="Sequence_54">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -363,17 +363,17 @@
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <av:Point x:Key="ShapeLocation">200,368.54</av:Point>
-                                        <av:Size x:Key="ShapeSize">200,83</av:Size>
+                                        <av:Size x:Key="ShapeSize">200,83.2</av:Size>
                                         <av:PointCollection x:Key="ConnectorLocation">300,451.54 300,481.54 300.141666666667,481.54 300.141666666667,526.5</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Sequence DisplayName="Check valid subject" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                                    <Sequence DisplayName="Check valid subject" sap:VirtualizedContainerService.HintSize="200,83.2" sap2010:WorkflowViewState.IdRef="Sequence_27">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Assign sap:VirtualizedContainerService.HintSize="1037,83" sap2010:WorkflowViewState.IdRef="Assign_12">
+                                      <Assign sap:VirtualizedContainerService.HintSize="1036,81.6" sap2010:WorkflowViewState.IdRef="Assign_12">
                                         <Assign.To>
                                           <OutArgument x:TypeArguments="x:String">[strQuery]</OutArgument>
                                         </Assign.To>
@@ -381,13 +381,13 @@
                                           <InArgument x:TypeArguments="x:String">["SELECT * FROM [RPA].[dbo].[RobotEmail] WHERE robot_name = '"+strSubject.ToUpper+"'"]</InArgument>
                                         </Assign.Value>
                                       </Assign>
-                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Handles\Get data from DB.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="1037,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Handles\Get data from DB.xaml">
+                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Handles\Get data from DB.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="1036,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Handles\Get data from DB.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
                                           <InArgument x:TypeArguments="x:String" x:Key="in_sqlQuery">[strQuery]</InArgument>
                                           <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtResult">[dtRobotEmail]</OutArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                       </ui:InvokeWorkflowFile>
-                                      <If Condition="[dtRobotEmail.Rows.Count &gt; 0]" DisplayName="Check robot exist" sap:VirtualizedContainerService.HintSize="1037,479" sap2010:WorkflowViewState.IdRef="If_6">
+                                      <If Condition="[dtRobotEmail.Rows.Count &gt; 0]" DisplayName="Check robot exist" sap:VirtualizedContainerService.HintSize="1036,475.2" sap2010:WorkflowViewState.IdRef="If_6">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -395,13 +395,13 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                         <If.Then>
-                                          <Sequence sap:VirtualizedContainerService.HintSize="496,194" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                                          <Sequence sap:VirtualizedContainerService.HintSize="496,193.6" sap2010:WorkflowViewState.IdRef="Sequence_34">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Assign sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_13">
+                                            <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_13">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:Boolean">[isValid]</OutArgument>
                                               </Assign.To>
@@ -412,13 +412,13 @@
                                           </Sequence>
                                         </If.Then>
                                         <If.Else>
-                                          <Sequence sap:VirtualizedContainerService.HintSize="496,317" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                                          <Sequence sap:VirtualizedContainerService.HintSize="496,315.2" sap2010:WorkflowViewState.IdRef="Sequence_35">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Assign sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_16">
+                                            <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_16">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:Boolean">[isValid]</OutArgument>
                                               </Assign.To>
@@ -426,7 +426,7 @@
                                                 <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                                               </Assign.Value>
                                             </Assign>
-                                            <Assign sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_17">
+                                            <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_17">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:String">[errorMessage]</OutArgument>
                                               </Assign.To>
@@ -437,9 +437,9 @@
                                           </Sequence>
                                         </If.Else>
                                       </If>
-                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1037,53" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1036,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
                                         <ui:CommentOut.Body>
-                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="558,194" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="512,195.2" sap2010:WorkflowViewState.IdRef="Sequence_42">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -480,12 +480,12 @@
                                       </ui:CommentOut>
                                     </Sequence>
                                     <FlowStep.Next>
-                                      <FlowDecision x:Name="__ReferenceID1" Condition="[isValid = True]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                                      <FlowDecision x:Name="__ReferenceID1" Condition="[isValid = True]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.4,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             <av:Point x:Key="ShapeLocation">260.641666666667,526.5</av:Point>
-                                            <av:Size x:Key="ShapeSize">79,87</av:Size>
+                                            <av:Size x:Key="ShapeSize">78.4,87.2</av:Size>
                                             <av:PointCollection x:Key="TrueConnector">260.641666666667,570 120,570 120,638.54</av:PointCollection>
                                             <av:PointCollection x:Key="FalseConnector">339.641666666667,570 480,570 480,638.54</av:PointCollection>
                                           </scg:Dictionary>
@@ -495,11 +495,11 @@
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <av:Point x:Key="ShapeLocation">20,638.54</av:Point>
-                                                <av:Size x:Key="ShapeSize">200,83</av:Size>
+                                                <av:Size x:Key="ShapeSize">200,83.2</av:Size>
                                                 <av:PointCollection x:Key="ConnectorLocation">120,721.54 120,788.54</av:PointCollection>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Sequence DisplayName="Reply to user" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                                            <Sequence DisplayName="Reply to user" sap:VirtualizedContainerService.HintSize="200,83.2" sap2010:WorkflowViewState.IdRef="Sequence_28">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -527,11 +527,11 @@
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <av:Point x:Key="ShapeLocation">20,788.54</av:Point>
-                                                    <av:Size x:Key="ShapeSize">200,83</av:Size>
+                                                    <av:Size x:Key="ShapeSize">200,83.2</av:Size>
                                                     <av:PointCollection x:Key="ConnectorLocation">220,830.04 310.141666666667,830.04 310.141666666667,906.5</av:PointCollection>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <Sequence DisplayName="Save attachments" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                                                <Sequence DisplayName="Save attachments" sap:VirtualizedContainerService.HintSize="200,83.2" sap2010:WorkflowViewState.IdRef="Sequence_29">
                                                   <Sequence.Variables>
                                                     <Variable x:TypeArguments="x:String" Name="folderInput" />
                                                     <Variable x:TypeArguments="snm:Attachment" Name="attachedFile" />
@@ -642,12 +642,12 @@
                                                   </If>
                                                 </Sequence>
                                                 <FlowStep.Next>
-                                                  <FlowDecision x:Name="__ReferenceID5" Condition="[CurrentMail.Attachments.Count &gt; 0]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                                                  <FlowDecision x:Name="__ReferenceID5" Condition="[CurrentMail.Attachments.Count &gt; 0]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.4,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                         <av:Point x:Key="ShapeLocation">270.641666666667,906.5</av:Point>
-                                                        <av:Size x:Key="ShapeSize">79,87</av:Size>
+                                                        <av:Size x:Key="ShapeSize">78.4,87.2</av:Size>
                                                         <av:PointCollection x:Key="TrueConnector">270.641666666667,950 120,950 120,978.54</av:PointCollection>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
@@ -656,16 +656,16 @@
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <av:Point x:Key="ShapeLocation">20,978.54</av:Point>
-                                                            <av:Size x:Key="ShapeSize">200,83</av:Size>
+                                                            <av:Size x:Key="ShapeSize">200,83.2</av:Size>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
-                                                        <Sequence DisplayName="Update exist data" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                                                        <Sequence DisplayName="Update exist data" sap:VirtualizedContainerService.HintSize="200,83.2" sap2010:WorkflowViewState.IdRef="Sequence_51">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                          <Assign sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_31">
+                                                          <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_31">
                                                             <Assign.To>
                                                               <OutArgument x:TypeArguments="x:String">[strQuery]</OutArgument>
                                                             </Assign.To>
@@ -673,7 +673,7 @@
                                                               <InArgument x:TypeArguments="x:String" xml:space="preserve">["UPDATE [dbo].[RobotEmail] Set waiting_process = 'Waiting for process...'  Where robot_name = '"+strSubject.ToUpper+"'"]</InArgument>
                                                             </Assign.Value>
                                                           </Assign>
-                                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Handles\Update data from DB.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Handles\Update data from DB.xaml">
+                                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Handles\Update data from DB.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Handles\Update data from DB.xaml">
                                                             <ui:InvokeWorkflowFile.Arguments>
                                                               <InArgument x:TypeArguments="x:String" x:Key="in_sqlQuery">[strQuery]</InArgument>
                                                               <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtResult" />
@@ -693,26 +693,26 @@
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <av:Point x:Key="ShapeLocation">380,638.54</av:Point>
-                                                <av:Size x:Key="ShapeSize">200,83</av:Size>
+                                                <av:Size x:Key="ShapeSize">200,83.2</av:Size>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Sequence DisplayName="Send email error" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                            <Sequence DisplayName="Send email error" sap:VirtualizedContainerService.HintSize="200,83.2" sap2010:WorkflowViewState.IdRef="Sequence_31">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <Assign sap:VirtualizedContainerService.HintSize="434,85" sap2010:WorkflowViewState.IdRef="Assign_21">
+                                              <Assign sap:VirtualizedContainerService.HintSize="433.6,83.2" sap2010:WorkflowViewState.IdRef="Assign_21">
                                                 <Assign.To>
                                                   <OutArgument x:TypeArguments="x:String">[emailBody]</OutArgument>
                                                 </Assign.To>
                                                 <Assign.Value>
-                                                  <InArgument x:TypeArguments="x:String" xml:space="preserve">["&lt;p&gt;Dear user,&lt;/p&gt;" + 
+                                                  <InArgument x:TypeArguments="x:String" xml:space="preserve">["&lt;p&gt;&lt;b&gt;Dear user,&lt;/b&gt;&lt;/p&gt;" + 
 errorMessage +
 "&lt;p&gt;Thanks !&lt;/p&gt;"]</InArgument>
                                                 </Assign.Value>
                                               </Assign>
-                                              <umab:SendMailX Bcc="{x:Null}" Cc="{x:Null}" HtmlBodyFromFile="{x:Null}" HtmlBodyFromText="{x:Null}" ReplyTo="{x:Null}" Account="[Gmail]" Body="[emailBody]" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="434,371" sap2010:WorkflowViewState.IdRef="SendMailX_1" Importance="Normal" IsDraft="False" MaxBodyDocumentSizeMB="2" Sensitivity="Normal" Subject="[RPA] ERROR: CANNOT RUN BOT" To="[strSentFrom]" UseDocumentAsBody="False">
+                                              <umab:SendMailX Bcc="{x:Null}" Cc="{x:Null}" HtmlBodyFromFile="{x:Null}" HtmlBodyFromText="{x:Null}" ReplyTo="{x:Null}" Account="[Gmail]" Body="[emailBody]" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="433.6,374.4" sap2010:WorkflowViewState.IdRef="SendMailX_1" Importance="Normal" IsDraft="False" MaxBodyDocumentSizeMB="2" Sensitivity="Normal" Subject="[&quot;[RPA] ERROR: TASK IS NOT EXIST ON SYSTEM - [&quot;+strSubject.ToUpper+&quot;]&quot;]" To="[strSentFrom]" UseDocumentAsBody="False">
                                                 <umab:SendMailX.Files>
                                                   <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                                 </umab:SendMailX.Files>
@@ -754,19 +754,19 @@ errorMessage +
             </umab:GmailApplicationCard.ClientSecret>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </umab:GmailApplicationCard>
-          <Sequence DisplayName="Update mail_checking as FALSE" sap:VirtualizedContainerService.HintSize="496,348" sap2010:WorkflowViewState.IdRef="Sequence_43">
+          <Sequence DisplayName="Update mail_checking as FALSE" sap:VirtualizedContainerService.HintSize="781.6,347.2" sap2010:WorkflowViewState.IdRef="Sequence_43">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_27">
+            <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_27">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strQuery]</OutArgument>
               </Assign.To>
@@ -774,7 +774,7 @@ errorMessage +
                 <InArgument x:TypeArguments="x:String" xml:space="preserve">["UPDATE dbo.Server Set mail_checking = 'FALSE',running_task = ''  Where machine_name = '"+strMachineName+"'"]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Handles\Update data from DB.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Handles\Update data from DB.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Handles\Update data from DB.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Handles\Update data from DB.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="x:String" x:Key="in_sqlQuery">[strQuery]</InArgument>
                 <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtResult" />
